@@ -96,6 +96,7 @@
         margin: 200px auto 100px auto;
     }
 
+   
 </style>
 <body>
 
@@ -198,60 +199,98 @@
         </div>
     </body>
 
+
+
     <title>URL埋め込み画像</title>
-    <style>
-        .image-container {
-            display: flex;
-            gap: 10px; /* 画像の間隔を調整 */
-        }
-        .image-container img {
-            vertical-align: middle; /* 画像を縦に揃える */
-        }
-    </style>
+<style>
+    .image-container {
+        display: flex;
+        gap: 1px; /* 画像の間隔を極限まで狭く */
+        flex-wrap: wrap; /* 複数行に折り返し */
+        justify-content: space-between; /* 横に4つ並べる */
+    }
+    .row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1px; /* 行間の余白も狭く */
+        gap: 1px; /* 行内の画像の間隔を最小限に */
+    }
+</style>
 </head>
 <body>
-    <div class="image-container">
+    <div class="row">
         <a href="https://www.shonenjump.com/j/rensai/myhero.html" target="_blank">
-            <img src="jumprogo.jpg" alt="Example Image" width="230" height="65">
+            <img src="jumprogo.jpg" alt="syuueisya" width="230" height="65">
         </a>
         <a href="https://www.bones.co.jp/" target="_blank">
-            <img src="bonesrogo.jpg" alt="Example Image" width="230" height="65">
+            <img src="bonesrogo.jpg" alt="bones" width="230" height="65">
+        </a>
+        <a href="https://www.ytv.co.jp/heroaca/" target="_blank">
+            <img src="dekurogo1.jpg" alt="dekurogo1" width="230" height="65">
+        </a>
+        <a href="https://heroaca-ui.bn-ent.net/" target="_blank">
+            <img src="dekurogo2.jpg" alt="dekurogo2" width="230" height="65">
+        </a>
+    </div>
+
+    <div class="row">
+        <a href="https://1kuji.com/" target="_blank">
+            <img src="dekurogo3.jpg" alt="dekurogo3" width="230" height="65">
+        </a>
+        <a href="https://shonenjumpplus.com/episode/10833497643049550348" target="_blank">
+            <img src="vizirante.jpg" alt="vizirante" width="230" height="65">
+        </a>
+        <a href="https://www.s-manga.net/items/contents.html?isbn=978-4-08-882249-5" target="_blank">
+            <img src="dekurogo4.jpg" alt="dekurogo4" width="230" height="65">
+        </a>
+        <a href="https://j-books.shueisha.co.jp/books/search_%E5%83%95%E3%81%AE%E3%83%92%E3%83%BC%E3%83%AD%E3%83%BC%E3%82%A2%E3%82%AB%E3%83%87%E3%83%9F%E3%82%A2.html" target="_blank">
+            <img src="yuueihakusyo.jpg" alt="yuueihakusyo" width="230" height="65">
         </a>
     </div>
 </body>
-    
-    <title>フッター作成</title>
+
+
+
+<title>フッター作成</title>
 <style>
+    @font-face {
+        font-family: 'KeiFont'; /* フォントの名前 */
+        src: url('keifont.ttf') format('truetype'); /* TrueTypeフォントを読み込む */
+        font-weight: normal;
+        font-style: normal;
+    }
+
     body {
-        margin: 0; /* ページ全体のマージンをリセット */
-        padding: 0; /* ページ全体のパディングをリセット */
-        min-height: 100vh; /* ページの高さを最低100vhに設定 */
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
+        font-family: 'KeiFont', sans-serif; /* フォントを指定 */
     }
     .content {
-        flex: 1; /* フッターをページの下に固定するために残りのスペースを埋める */
+        flex: 1;
     }
     .footer {
         background-color: #000000;
         padding: 20px 0;
-        text-align: center; /* フッターのテキストを中央に寄せる */
-        width: 100%; /* フッターをページ全体の幅に合わせる */
-        position: relative; /* 通常のドキュメントフローに従う */
+        text-align: center;
+        width: 100%;
+        position: relative;
     }
     .wrap {
-        max-width: 1200px; /* 最大幅を設定 */
-        margin: 0 auto; /* 中央寄せ */
+        max-width: 1200px;
+        margin: 0 auto;
     }
     .menu a {
-        margin: 0 10px; /* メニューリンクの左右に間隔を設定 */
-        text-decoration: none; /* 下線を消す */
-        color: #ffffff; /* 文字色を設定 */
-        transition: color 0.3s, text-shadow 0.3s; /* 色とテキストシャドウの遷移を追加 */
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 0.3s, text-shadow 0.3s;
     }
     .menu a:hover {
-        color: red; /* ホバー時の文字色を赤に変更 */
-        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8); /* 赤い光を追加 */
+        color: red;
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
     }
 </style>
 </head>
