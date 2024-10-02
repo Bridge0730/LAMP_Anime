@@ -5,132 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="hiroakarogo.png" type="image/png">
     <title>僕のヒーローアカデミア</title>
-<style>
-    body {
-        background: #c3c5c7;
-        height: 1500px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        overflow-x: hidden;
-    }
-
-    .header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 140px;
-        background: rgba(0, 0, 0, .8);
-        transition: height 0.3s;
-        z-index: 10;
-    }
-
-    .header .wrap {
-        margin: 0 auto;
-        width: 90%;
-        max-width: 69em;
-    }
-
-    .header h1,
-    .header .menu {
-        display: inline-block;
-        position: relative;
-    }
-
-    .header h1,
-    .header .menu a {
-        line-height: 140px;
-        color: #808080;
-        text-decoration: none;
-    }
-
-    .header .menu a:hover {
-        color: #ff0000;
-        transition: color 0.3s ease;
-    }
-
-    .header h1 {
-        float: left;
-        margin: 0;
-        color: #ffffff;
-        font-size: 72px;
-        text-transform: uppercase;
-    }
-
-    .header h1 a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .header .menu {
-        float: right;
-    }
-
-    .header h1,
-    .header nav a {
-        transition: all 0.3s;
-    }
-
-    .header.shrink {
-        height: 90px;
-    }
-
-    .header.shrink h1,
-    .header.shrink nav a {
-        line-height: 90px;
-    }
-
-    .header.shrink h1 {
-        font-size: 2em;
-    }
-
-    .lead {
-        margin-bottom: 100px;
-        margin-top: 200px;
-        font-size: 50px;
-        text-align: left;
-        width: 80%;
-        margin: 200px auto 100px auto;
-    }
-
-   
-</style>
-<body>
-
-    <title>ヘッダー作成</title>
     <style>
+        body {
+            background: #362e8e;
+            height: 1500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            background: rgb(0, 0, 0);
+            transition: height 0.3s;
+            z-index: 10;
+        }
+
+        .header .wrap {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 69em;
+        }
+
+        .header h1,
+        .header .menu {
+            display: inline-block;
+            position: relative;
+        }
+
+        .header h1,
+        .header .menu a {
+            line-height: 140px;
+            color: #808080;
+            text-decoration: none;
+        }
+
+        .header .menu a:hover {
+            color: #ff0000;
+            transition: color 0.3s ease;
+        }
+
+        .header h1 {
+            float: left;
+            margin: 0;
+            color: #ffffff;
+            font-size: 72px;
+            text-transform: uppercase;
+        }
+
+        .header h1 a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .header .menu {
+            float: right;
+        }
+
+        .header h1,
+        .header nav a {
+            transition: all 0.3s;
+        }
+
+        .header.shrink {
+            height: 90px;
+        }
+
+        .header.shrink h1,
+        .header.shrink nav a {
+            line-height: 90px;
+        }
+
+        .header.shrink h1 {
+            font-size: 2em;
+        }
+
+        .lead {
+            margin-bottom: 100px;
+            margin-top: 200px;
+            font-size: 50px;
+            text-align: left;
+            width: 80%;
+            margin: 200px auto 100px auto;
+        }
+
+        /* 動画表示用のスタイル */
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: opacity 0.5s ease; /* フェードアウト用のトランジション */
+        }
+
+        #myVideo {
+            width: 1920px;
+            height:1080px;
+        }
+
+        .fade-out {
+            opacity: 0; /* フェードアウトのスタイル */
+        }
+
         @font-face {
             font-family: 'KeiFont';
             src: url('keifont.ttf') format('truetype');
         }
-    
+
         .header h1 {
             font-family: 'KeiFont', sans-serif;
-            font-weight: 500; /* 標準 */
+            font-weight: 500;
         }
-    
+
         .header nav a {
             font-family: 'KeiFont', sans-serif;
-            font-weight: 400; /* 標準の太さ */
+            font-weight: 400;
         }
     </style>
-    
-    <header class="header" style="position: fixed; top: 0; left: 0; width: 100%; height: 140px; background: rgba(0, 0, 0, .8); transition: height 0.3s; z-index: 10; display: flex; align-items: center; justify-content: center;">
-        <div class="wrap" style="width: 100%; max-width: 69em; display: flex; align-items: center; justify-content: center;">
-            <img src="https://cdn.super-groupies.com/images/title/133/fd7df4f4-1df1-481c-a22c-f27224d9f187.png" alt="Logo" style="max-width: 200px; margin-right: 10px;">
-            <h1 style="margin: 0; color: #ffffff; font-size: 55px; text-transform: uppercase;">
-                <a href="http://18.178.60.234/students/G202503_10/Anime/index.html#" style="color: inherit; text-decoration: none;">僕のヒーローアカデミア</a>
-            </h1>
-            <nav class="menu" style="margin-left: 20px;">
-                <a href="https://heroaca.com/" style="font-size: 2.5em; line-height: 140px; color: #ffffff; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#ffffff'">本家サイト</a>
-            </nav>
-        </div>
-    </header>
-    
-    
+</head>
+<body>
+
+<!-- ヘッダー部分 -->
+<header class="header" style="position: fixed; top: 0; left: 0; width: 100%; height: 140px; background: rgb(0, 0, 0); transition: height 0.3s; z-index: 10; display: flex; align-items: center; justify-content: center;">
+    <div class="wrap" style="width: 100%; max-width: 69em; display: flex; align-items: center; justify-content: center;">
+        <img src="https://cdn.super-groupies.com/images/title/133/fd7df4f4-1df1-481c-a22c-f27224d9f187.png" alt="Logo" style="max-width: 200px; margin-right: 10px;">
+        <h1 style="margin: 0; color: #ffffff; font-size: 55px; text-transform: uppercase;">
+            <a href="http://18.178.60.234/students/G202503_10/Anime/index.html#" style="color: inherit; text-decoration: none;">僕のヒーローアカデミア</a>
+        </h1>
+        <nav class="menu" style="margin-left: 20px;">
+            <a href="https://heroaca.com/" style="font-size: 2.5em; line-height: 140px; color: #ffffff; text-decoration: none; transition: color 0.3s ease;" onmouseover="this.style.color='#ff0000'" onmouseout="this.style.color='#ffffff'">本家サイト</a>
+        </nav>
+    </div>
+</header>
+
+<!-- 最初だけ表示する動画コンテナ -->
+<div id="video-container">
+    <video id="myVideo" autoplay muted>
+        <source src="hiroakadouga.mp4" type="video/mp4">
+        お使いのブラウザは動画再生に対応していません。
+    </video>
+</div>
+
+<script>
+    // 動画が終了したときに非表示にする処理
+    const video = document.getElementById('myVideo');
+    const videoContainer = document.getElementById('video-container');
+
+    video.addEventListener('ended', () => {
+        // フェードアウトのクラスを追加
+        videoContainer.classList.add('fade-out');
+
+        // フェードアウトが完了した後に削除する
+        setTimeout(() => {
+            videoContainer.remove();
+        }, 500); // フェードアウトのトランジション時間と合わせる
+    });
+</script>
+
+</body>
+
     <title>背景画像の表示</title>
     </head>
     <body>
@@ -250,7 +296,6 @@
 </body>
 
 
-
 <title>フッター作成</title>
 <style>
     @font-face {
@@ -268,26 +313,36 @@
         flex-direction: column;
         font-family: 'KeiFont', sans-serif; /* フォントを指定 */
     }
+    
     .content {
-        flex: 1;
+        flex: 1; /* 残りのスペースを占める */
     }
+    
     .footer {
         background-color: #000000;
         padding: 20px 0;
         text-align: center;
         width: 100%;
-        position: relative;
+        position: fixed; /* フッターを固定 */
+        bottom: 0; /* 画面の下部に配置 */
+        left: 0;
+        right: 0;
+        display: none; /* 初期状態は非表示 */
     }
+    
     .wrap {
         max-width: 1200px;
         margin: 0 auto;
+        text-align: center; /* 内部コンテンツを中央揃えに */
     }
+    
     .menu a {
         margin: 0 10px;
         text-decoration: none;
         color: #ffffff;
         transition: color 0.3s, text-shadow 0.3s;
     }
+    
     .menu a:hover {
         color: red;
         text-shadow: 0 0 5px rgba(255, 0, 0, 0.8);
@@ -296,11 +351,12 @@
 </head>
 <body>
     <div class="content">
-        <!-- ここにページのメインコンテンツを追加 -->
+        <!-- 他のコンテンツをここに追加できます -->
+        <p style="height: 10px;"></p>
     </div>
     <footer class="footer">
         <div class="wrap">
-            <p style="color: white;">&copy; 2024 僕のヒーローアカデミア</p>
+            <p style="color: white;">&copy;堀越耕平／集英社・僕のヒーローアカデミア製作委員会</p>
             <nav class="menu">
                 <a href="https://heroaca.com/news/">News</a>
                 <a href="https://heroaca.com/onair/">On air</a>
@@ -318,4 +374,24 @@
             </nav>
         </div>
     </footer>
+
+    <script>
+        // スクロールイベントを監視する
+        window.onscroll = function() {
+            const footer = document.querySelector('.footer');
+            // ページ全体の高さ
+            const scrollHeight = document.documentElement.scrollHeight;
+            // 表示領域の高さ
+            const clientHeight = document.documentElement.clientHeight;
+            // 現在のスクロール位置
+            const scrollTop = document.documentElement.scrollTop;
+
+            // ページの下部に近いかどうかを判定
+            if (scrollTop + clientHeight >= scrollHeight - 50) {
+                footer.style.display = 'block'; // フッターを表示
+            } else {
+                footer.style.display = 'none'; // フッターを非表示
+            }
+        };
+    </script>
 </body>
